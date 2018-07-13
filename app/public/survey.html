@@ -8,8 +8,13 @@
     <title>Friend Finder</title>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
         crossorigin="anonymous">
+
 </head>
 
 <body>
@@ -30,9 +35,9 @@
                 <input id="add-name" type="text" name="userInfo">
                 <br> Photo URL
                 <input id="add-photo" type="text" name="userInfo">
-               
 
-                
+
+
                 <fieldset class="statements">
                     <legend>Statement 1 of 10</legend>
                     <p>
@@ -292,51 +297,116 @@
             <br>
 
             <!-- <button id="submit">Submit</button> -->
+            <button type="button" id="submit" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
+                Submit Answers
+            </button>
 
             <br>
-            <input type="submit" value="SUBMIT" id="submit">
-
+ 
     </div>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">New Friend</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div id="friend-content">
+                        <h6 id="friend-name"></h6>
+                        <div id='friend-photo-holder'></div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="reload" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 
     <script type="text/javascript">
 
 
         $("#submit").on("click", function (event) {
             event.preventDefault();
+            // !$("#add-name").val() === "" && !$("#add-photo").val() === ""
 
-            var answersArr = []
+            // console.log("name.val(): ", $("#add-name").val())
 
-            for (var i = 1; i < 11; i++) {
-                console.log($("input[name=Q" + i + "]:checked")[0].value)
-                answersArr.push($("input[name=Q" + i + "]:checked")[0].value)
+            // if($("#add-name").val()){
+            //     console.log(true)
+            // }else{
+            //     console.log(false);
+            // }
+
+
+            // console.log("add-photo.val(): ", $("#add-photo").val());
+            // if($("#add-photo").val()){
+            //     console.log(true)
+            // }else{
+            //     console.log(false);
+            // }
+
+            if ($("#add-name").val() && $("#add-photo").val() && $("input:checked").length === 10) {
+
+                var answersArr = []
+
+
+                // console.log($("input:checked"));
+
+                for (var i = 1; i < 11; i++) {
+                    console.log($("input[name=Q" + i + "]:checked")[0].value)
+                    answersArr.push($("input[name=Q" + i + "]:checked")[0].value)
+                }
+
+               
+
+               
+                    var newFriend = {
+                        name: $("#add-name").val().trim(),
+                        photo: $("#add-photo").val().trim(),
+                        scores: answersArr
+                    }
+                    console.log(newFriend)
+
+
+                    $.post("/api/friends", newFriend,
+                        function (data) {
+                            // clear the form when submitting
+                            $("#add-name").val("");
+                            $("add-photo").val("");
+
+                            console.log(data);
+
+                            $("#friend-name").text("Your new friend is: " + data.name);
+                            $("#friend-photo-holder").append(`<img src= ' ${data.photo} '> `)
+
+                        });
+              
+
+            } else {
+                $("#exampleModalLabel").text("Error!");
+                $("#friend-name").text("Please fill out the entire survey AND submit a picture");
             }
-            var newFriend = {
-                name: $("#add-name").val().trim(),
-                photo: $("#add-photo").val().trim(),
-                scores: answersArr
-            }
-            console.log(newFriend)
-            $.post("/api/friends", newFriend,
-                function (data) {
-                    // clear the form when submitting
-                    $("#add-name").val("");
-                    $("add-photo").val("");
-                });
+
+
+
+
         });
 
-
-        function displayFriend() {
-
-            var currentURL = window.location.origin;
-
-            $.ajax({ url: currentURL + "/api/friends", method: "GET" })
-                .then(function (tableData) {
+        $(document).on("click", "#reload", function () {
+            location.reload();
+        })
 
 
-
-                })
-
-        }
     </script>
 
 </body>
