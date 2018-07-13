@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Friend Finder</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
+        crossorigin="anonymous">
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-4">Friend Finder Survey!</h1>
+                <p class="lead">Need more friends? Take this Friend Finder Survey!</p>
+            </div>
+        </div>
+
+        <form>
+
+            <form action="/action_page.php" id="form1">
+                First and Last name:
+                <input id="add-name" type="text" name="userInfo">
+                <br> Photo URL
+                <input id="add-photo" type="text" name="userInfo">
+               
+
+                
+                <fieldset class="statements">
+                    <legend>Statement 1 of 10</legend>
+                    <p>
+                        <label>My friends and family would describe me as a pretty laid back person.</label>
+
+                        <br>
+                        <input type="radio" name="Q1" value="1" />
+                        <label for="sizeSmall"></label>Totally Disagree</label>
+                        <br>
+                        <input type="radio" name="Q1" value="2" />
+                        <label for="sizeMed">Disagree</label>
+                        <br>
+                        <input type="radio" name="Q1" value="3" />
+                        <label for="sizeLarge">About equal</label>
+                        <br>
+                        <input type="radio" name="Q1" value="4" />
+                        <label for="sizeLarge">Agree</label>
+                        <br>
+                        <input type="radio" name="Q1" value="5" />
+                        <label for="sizeLarge">Totally Agree</label>
+                    </p>
+                </fieldset>
+
+
+                <br>
+
+
+                <fieldset class="statements">
+                    <legend>Statement 2 of 10</legend>
+                    <p>
+                        <label>Winning the debate is more important than making sure no one gets upset.</label>
+
+                        <br>
+                        <input type="radio" name="Q2" value="1" />
+                        <label for="sizeSmall">Totally Disagree</label>
+                        <br>
+                        <input type="radio" name="Q2" value="2" />
+                        <label for="sizeMed">Disagree</label>
+                        <br>
+                        <input type="radio" name="Q2" value="3" />
+                        <label for="sizeLarge">About equal</label>
+                        <br>
+                        <input type="radio" name="Q2" value="4" />
+                        <label for="sizeLarge">Agree</label>
+                        <br>
+                        <input type="radio" name="Q2" value="5" />
+                        <label for="sizeLarge">Totally Agree</label>
+                    </p>
+                </fieldset>
+
+                <br>
+
+
+                <fieldset class="statements">
+                    <legend>Statement 3 of 10</legend>
+                    <p>
+                        <label>I would rather visit a secluded forest than a busy city for a vacation.</label>
+
+                        <br>
+                        <input type="radio" name="Q3" value="1" />
+                        <label for="sizeSmall">Totally Disagree</label>
+                        <br>
+                        <input type="radio" name="Q3" value="2" />
+                        <label for="sizeMed">Disagree</label>
+                        <br>
+                        <input type="radio" name="Q3" value="3" />
+                        <label for="sizeLarge">About equal</label>
+                        <br>
+                        <input type="radio" name="Q3" value="4" />
+                        <label for="sizeLarge">Agree</label>
+                        <br>
+                        <input type="radio" name="Q3" value="5" />
+                        <label for="sizeLarge">Totally Agree</label>
+                    </p>
+                </fieldset>
+
+                <br>
+
+                <fieldset class="statements">
+
+                    <legend>Statement 4 of 10</legend>
+                    <p>
+                        <label>I'm more of an idea person than a down-to-Earth person.</label>
+
+                        <br>
+                        <input type="radio" name="Q4" value="1" />
+                        <label for="sizeSmall">Totally Disagree</label>
+                        <br>
+                        <input type="radio" name="Q4" value="2" />
+                        <label for="sizeMed">Disagree</label>
+                        <br>
+                        <input type="radio" name="Q4" value="3" />
+                        <label for="sizeLarge">About equal</label>
+                        <br>
+                        <input type="radio" name="Q4" value="4" />
+                        <label for="sizeLarge">Agree</label>
+                        <br>
+                        <input type="radio" name="Q4" value="5" />
+                        <label for="sizeLarge">Totally Agree</label>
+                    </p>
+                </fieldset>
+
+                <br>
+
+                <fieldset class="statements">
+                    <legend>Statement 5 of 10</legend>
+                    <p>
+                        <label>I love going to parties and clubs and places where there's a lot of dancing and people.</label>
+
+                        <br>
+                        <input type="radio" name="Q5" value="1" />
+                        <label for="sizeSmall">Totally Disagree</label>
+                        <br>
+                        <input type="radio" name="Q5" value="2" />
+                        <label for="sizeMed">Disagree</label>
+                        <br>
+                        <input type="radio" name="Q5" value="3" />
+                        <label for="sizeLarge">About equal</label>
+                        <br>
+                        <input type="radio" name="Q5" value="4" />
+                        <label for="sizeLarge">Agree</label>
+                        <br>
+                        <input type="radio" name="Q5" value="5" />
+                        <label for="sizeLarge">Totally Agree</label>
+                    </p>
+                </fieldset>
+
+                <br>
+
+
+                <fieldset class="statements">
+                    <legend>Statement 6 of 10</legend>
+                    <p>
+                        <label>I'm a very punctual person.</label>
+
+                        <br>
+                        <input type="radio" name="Q6" value="1" />
+                        <label for="sizeSmall">Totally Disagree</label>
+                        <br>
+                        <input type="radio" name="Q6" value="2" />
+                        <label for="sizeMed">Disagree</label>
+                        <br>
+                        <input type="radio" name="Q6" value="3" />
+                        <label for="sizeLarge">About equal</label>
+                        <br>
+                        <input type="radio" name="Q6" value="4" />
+                        <label for="sizeLarge">Agree</label>
+                        <br>
+                        <input type="radio" name="Q6" value="5" />
+                        <label for="sizeLarge">Totally Agree</label>
+                    </p>
+                </fieldset>
+
+                <br>
+
+                <fieldset class="statements">
+                    <legend>Statement 7 of 10</legend>
+                    <p>
+                        <label>I like science fiction movies more than I like comedies.</label>
+
+                        <br>
+                        <input type="radio" name="Q7" value="1" />
+                        <label for="sizeSmall">Totally Disagree</label>
+                        <br>
+                        <input type="radio" name="Q7" value="2" />
+                        <label for="sizeMed">Disagree</label>
+                        <br>
+                        <input type="radio" name="Q7" value="3" />
+                        <label for="sizeLarge">About equal</label>
+                        <br>
+                        <input type="radio" name="Q7" value="4" />
+                        <label for="sizeLarge">Agree</label>
+                        <br>
+                        <input type="radio" name="Q7" value="5" />
+                        <label for="sizeLarge">Totally Agree</label>
+                    </p>
+                </fieldset>
+
+                <br>
+
+                <fieldset class="statements">
+                    <legend>Statement 8 of 10</legend>
+                    <p>
+                        <label>I find it difficult to introduce myself to other people.</label>
+
+                        <br>
+                        <input type="radio" name="Q8" value="1" />
+                        <label for="sizeSmall">Totally Disagree</label>
+                        <br>
+                        <input type="radio" name="Q8" value="2" />
+                        <label for="sizeMed">Disagree</label>
+                        <br>
+                        <input type="radio" name="Q8" value="3" />
+                        <label for="sizeLarge">About equal</label>
+                        <br>
+                        <input type="radio" name="Q8" value="4" />
+                        <label for="sizeLarge">Agree</label>
+                        <br>
+                        <input type="radio" name="Q8" value="5" />
+                        <label for="sizeLarge">Totally Agree</label>
+                    </p>
+                </fieldset>
+
+                <br>
+
+                <fieldset class="statements">
+                    <legend>Statement 9 of 10</legend>
+                    <p>
+                        <label>I like superheroes and/or anime.</label>
+
+                        <br>
+                        <input type="radio" name="Q9" value="1" />
+                        <label for="sizeSmall">Totally Disagree</label>
+                        <br>
+                        <input type="radio" name="Q9" value="2" />
+                        <label for="sizeMed">Disagree</label>
+                        <br>
+                        <input type="radio" name="Q9" value="3" />
+                        <label for="sizeLarge">About equal</label>
+                        <br>
+                        <input type="radio" name="Q9" value="4" />
+                        <label for="sizeLarge">Agree</label>
+                        <br>
+                        <input type="radio" name="Q9" value="5" />
+                        <label for="sizeLarge">Totally Agree</label>
+                    </p>
+                </fieldset>
+
+                <br>
+
+                <fieldset class="statements">
+                    <legend>Statement 10 of 10</legend>
+                    <p>
+                        <label>I find it difficult to relate to other people's feelings.</label>
+
+                        <br>
+                        <input type="radio" name="Q10" value="1" />
+                        <label for="sizeSmall">Totally Disagree</label>
+                        <br>
+                        <input type="radio" name="Q10" value="2" />
+                        <label for="sizeMed">Disagree</label>
+                        <br>
+                        <input type="radio" name="Q10" value="3" />
+                        <label for="sizeLarge">About equal</label>
+                        <br>
+                        <input type="radio" name="Q10" value="4" />
+                        <label for="sizeLarge">Agree</label>
+                        <br>
+                        <input type="radio" name="Q10" value="5" />
+                        <label for="sizeLarge">Totally Agree</label>
+                    </p>
+                </fieldset>
+
+
+
+            </form>
+            <br>
+
+            <!-- <button id="submit">Submit</button> -->
+
+            <br>
+            <input type="submit" value="SUBMIT" id="submit">
+
+    </div>
+
+    <script type="text/javascript">
+
+
+        $("#submit").on("click", function (event) {
+            event.preventDefault();
+
+            var answersArr = []
+
+            for (var i = 1; i < 11; i++) {
+                console.log($("input[name=Q" + i + "]:checked")[0].value)
+                answersArr.push($("input[name=Q" + i + "]:checked")[0].value)
+            }
+            var newFriend = {
+                name: $("#add-name").val().trim(),
+                photo: $("#add-photo").val().trim(),
+                scores: answersArr
+            }
+            console.log(newFriend)
+            $.post("/api/friends", newFriend,
+                function (data) {
+                    // clear the form when submitting
+                    $("#add-name").val("");
+                    $("add-photo").val("");
+                });
+        });
+
+
+        function displayFriend() {
+
+            var currentURL = window.location.origin;
+
+            $.ajax({ url: currentURL + "/api/friends", method: "GET" })
+                .then(function (tableData) {
+
+
+
+                })
+
+        }
+    </script>
+
+</body>
+
+</html>
