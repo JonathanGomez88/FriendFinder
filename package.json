@@ -1,0 +1,25 @@
+{
+  "name": "friendfinder",
+  "version": "1.0.0",
+  "description": "This app is designed to take a survey response from he user and compare it with other people's responses.  It is then supposed to calculate which person's answers matched most similarly to those of the user and display that person's name and photo as a modal to the user.",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JonathanGomez88/FriendFinder.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JonathanGomez88/FriendFinder/issues"
+  },
+  "homepage": "https://github.com/JonathanGomez88/FriendFinder#readme"
+}
