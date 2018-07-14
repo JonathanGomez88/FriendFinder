@@ -14,6 +14,7 @@
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
         crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="styles/styles.css">
 
 </head>
 
@@ -30,11 +31,20 @@
 
         <form>
 
-            <form action="/action_page.php" id="form1">
+            <!-- <form action="/action_page.php" id="form1">
                 First and Last name:
                 <input id="add-name" type="text" name="userInfo">
-                <br> Photo URL
-                <input id="add-photo" type="text" name="userInfo">
+                <br> Photo URL:
+                <input id="add-photo" type="text" name="userInfo"> -->
+
+                <div class="form-group">
+                    <label for="formGroupExampleInput">First and Last Name</label>
+                    <input id="add-name" type="text" class="form-control" placeholder="First and Last Name">
+                  </div>
+                  <div class="form-group">
+                    <label for="formGroupExampleInput2">Photo URL</label>
+                    <input id="add-photo" type="text" class="form-control" placeholder="Photo URL">
+                  </div>
 
 
 
@@ -382,7 +392,7 @@
                         function (data) {
                             // clear the form when submitting
                             $("#add-name").val("");
-                            $("add-photo").val("");
+                            $("#add-photo").val("");
 
                             console.log(data);
 

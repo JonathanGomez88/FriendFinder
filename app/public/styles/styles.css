@@ -1,0 +1,20 @@
+#wrapper {
+    background: #DFEEF5;
+    padding: 50px
+}
+
+#wrapper-home {
+    padding: 50px
+}
+
+h1 {
+    margin-bottom: 50px
+}
+
+.jumbotron {
+    background: #42AADB
+}
+
+#add-name {
+    margin-bottom: 10px;
+}
